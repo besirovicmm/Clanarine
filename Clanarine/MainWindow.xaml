@@ -1,0 +1,41 @@
+﻿<Window x:Class="Clanarine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Clanarine"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closing="zatvaranje">
+    <TabControl>
+        <TabItem Header="Imenik">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+                    <Button Content="Unos" Click="UnosUImenik"/>
+                    <Button Content="Aktiviraj" Click="Button_Click"/>
+                    <Button Content="Obrisi" Click="Button_Click_1"/>
+                </StackPanel>
+                <DataGrid Name="dg1" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Ime i Prezime" Binding="{Binding imeIPrezime}"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+
+        </TabItem>
+        <TabItem  Header="Aktivne Clanarine">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DockPanel.Dock="Bottom">
+                    <Button Content="Produzi" Click="Button_Click_2" />
+                    <Button Content="Ponisti" Click="Button_Click_3"/>
+                </StackPanel>
+                <DataGrid Name="dg2" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Ime i Prezime" Binding="{Binding imeIPrezime}" />
+                        <DataGridTextColumn Header="Clanarina vazi do" Binding="{Binding Clanarina}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+</Window>
